@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ai-knowledge-base
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:kb;MODE=MYSQL;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    username: sa
+    password:
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
+app:
+  ai:
+    system-prompt: 你是企业知识库AI助手，请优先依据知识库内容回答。
+    model:
+      base-url: https://api.openai.com
+      api-key: ${OPENAI_API_KEY:}
+      model: gpt-4o-mini
