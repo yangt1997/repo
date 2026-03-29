@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ai-knowledge-base
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+      chat:
+        options:
+          model: gpt-4o-mini
+          temperature: 0.2
+
+app:
+  ai:
+    system-prompt: 你是企业知识库AI助手，请根据用户问题给出准确、简洁的回答。
